@@ -1,0 +1,37 @@
+services:
+  # Backend Web Service
+  - type: web
+    name: gen-ai-backend
+    env: node
+    rootDir: MERN_AI_CONTENT-GENERATOR-BACKEND
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 8090
+      - key: MONGO_URI
+        sync: false # Set in Render Dashboard
+      - key: JWT_SECRET
+        sync: false # Set in Render Dashboard
+      - key: API_KEY
+        sync: false # Set in Render Dashboard
+      - key: RAZORPAY_KEY_ID
+        sync: false # Set in Render Dashboard
+      - key: RAZORPAY_KEY_SECRET
+        sync: false # Set in Render Dashboard
+      - key: CLIENT_URL
+        value: https://gen-ai-frontend.onrender.com # Change to frontend URL once deployed
+
+  # Frontend Static Site
+  - type: web
+    name: gen-ai-frontend
+    env: static
+    rootDir: MERN-AI-CONTENT-GENERATOR-FRONTEND-VITE
+    buildCommand: npm install && npm run build
+    publishDir: dist
+    routes:
+      - type: rewrite
+        src: /*
+        dest: /index.html
