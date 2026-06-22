@@ -1,0 +1,22 @@
+# Dependency directories
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Environment files
+.env
+.env.test
+.env.production
+
+# Optional eslint cache
+.eslintcache
+
+# Mac files
+.DS_Store
+
+# Editor files
+.vscode/
+.idea/

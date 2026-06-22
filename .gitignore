@@ -1,0 +1,23 @@
+# Ignore node_modules in any subfolder
+**/node_modules/
+
+# Ignore env files in any subfolder
+**/.env
+**/.env.local
+**/.env.development.local
+**/.env.test.local
+**/.env.production.local
+
+# Ignore logs
+**/logs/
+**/*.log
+**/npm-debug.log*
+
+# Ignore build outputs
+**/dist/
+**/dist-ssr/
+
+# Editor files
+.vscode/
+.idea/
+.DS_Store
