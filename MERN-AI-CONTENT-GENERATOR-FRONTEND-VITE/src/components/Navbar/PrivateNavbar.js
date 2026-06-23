@@ -18,6 +18,7 @@ const navigation = [
 export default function PrivateNavbar() {
   const { logout, isAdmin } = useAuth();
   const location = useLocation();
+  const navigate = useNavigate();
   const mutation = useMutation({ mutationFn: logoutAPI });
   const { theme, toggleTheme } = useTheme();
 
@@ -26,8 +27,17 @@ export default function PrivateNavbar() {
     : navigation;
 
   const handleLogout = () => {
-    mutation.mutate();
-    logout();
+    mutation.mutate(null, {
+      onSuccess: () => {
+        logout();
+        navigate("/login");
+      },
+      onError: () => {
+        // Fallback: logout even if API call fails
+        logout();
+        navigate("/login");
+      }
+    });
   };
 
   return (
