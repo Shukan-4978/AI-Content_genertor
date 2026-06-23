@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = import.meta.env.VITE_API_URL || "https://gen-ai-backend.onrender.com";
+const BASE_URL = import.meta.env.VITE_API_URL || "https://gen-ai-backend-1ytq.onrender.com";
 
 //=======Stripe Payment=====
 
