@@ -151,7 +151,7 @@ const Dashboard = () => {
                   <th className="py-4 px-4 font-semibold">Cycle Plan</th>
                   <th className="py-4 px-4 font-semibold">Date Initialized</th>
                   <th className="py-4 px-4 font-semibold">Status State</th>
-                  <th className="py-4 px-4 font-semibold text-right">Cost (USD)</th>
+                  <th className="py-4 px-4 font-semibold text-right">Cost (INR)</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-white/5 text-sm text-gray-300">
@@ -168,7 +168,7 @@ const Dashboard = () => {
                         {payment?.status}
                       </span>
                     </td>
-                    <td className="py-4 px-4 text-right font-semibold text-white">$ {payment?.amount}</td>
+                    <td className="py-4 px-4 text-right font-semibold text-white">₹ {payment?.amount}</td>
                   </tr>
                 ))}
               </tbody>
