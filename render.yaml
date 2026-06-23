@@ -23,4 +23,4 @@ services:
       - key: RAZORPAY_KEY_SECRET
         sync: false # Set in Render Dashboard
       - key: CLIENT_URL
-        value: https://ai-content-generator-frontend.vercel.app # Set this to your Vercel URL once deployed
+        value: https://ai-content-genertor-khaki.vercel.app
