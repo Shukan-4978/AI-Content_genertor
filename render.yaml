@@ -2,6 +2,7 @@ services:
   # Backend Web Service
   - type: web
     name: gen-ai-backend
+    plan: free
     env: node
     rootDir: MERN_AI_CONTENT-GENERATOR-BACKEND
     buildCommand: npm install
@@ -27,6 +28,7 @@ services:
   # Frontend Static Site
   - type: web
     name: gen-ai-frontend
+    plan: free
     runtime: static
     rootDir: MERN-AI-CONTENT-GENERATOR-FRONTEND-VITE
     buildCommand: npm install && npm run build
