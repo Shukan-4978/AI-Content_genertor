@@ -28,7 +28,6 @@ services:
   # Frontend Static Site
   - type: web
     name: gen-ai-frontend
-    plan: free
     runtime: static
     rootDir: MERN-AI-CONTENT-GENERATOR-FRONTEND-VITE
     buildCommand: npm install && npm run build
