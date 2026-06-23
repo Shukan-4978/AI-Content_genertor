@@ -30,8 +30,8 @@ services:
     env: static
     rootDir: MERN-AI-CONTENT-GENERATOR-FRONTEND-VITE
     buildCommand: npm install && npm run build
-    publishDir: dist
+    publishPath: dist
     routes:
       - type: rewrite
-        src: /*
-        dest: /index.html
+        source: /*
+        destination: /index.html
