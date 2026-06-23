@@ -88,6 +88,9 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 // ---- Routes ----
+app.get("/", (req, res) => {
+  res.json({ message: "API is running successfully!" });
+});
 app.use("/api/v1/users", usersRouter);
 app.use("/api/v1/openai", openAIRouter);
 app.use("/api/v1/stripe", stripeRouter);
