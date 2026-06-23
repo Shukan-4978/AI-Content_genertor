@@ -6,23 +6,23 @@ import {
 
 const features = [
   {
-    name: "Push to deploy",
+    name: "Instant Generation",
     description:
-      "Commodo nec sagittis tortor mauris sed. Turpis tortor quis scelerisque diam id accumsan nullam tempus. Pulvinar etiam lacus volutpat eu. Phasellus praesent ligula sit faucibus.",
+      "Generate high-quality blog posts, articles, social media copy, and code explanations in seconds using state-of-the-art GPT intelligence.",
     href: "#",
     icon: CloudArrowUpIcon,
   },
   {
-    name: "SSL certificates",
+    name: "Secure & Authorized",
     description:
-      "Pellentesque enim a commodo malesuada turpis eleifend risus. Facilisis donec placerat sapien consequat tempor fermentum nibh.",
+      "Your personal prompts and generated history are protected under private authentication with secure session handling.",
     href: "#",
     icon: LockClosedIcon,
   },
   {
-    name: "Simple queues",
+    name: "History Log",
     description:
-      "Pellentesque sit elit congue ante nec amet. Dolor aenean curabitur viverra suspendisse iaculis eget. Nec mollis placerat ultricies euismod ut condimentum.",
+      "Review your historical content generation activity. Search, revisit, or copy previous drafts at any time directly from your console.",
     href: "#",
     icon: ArrowPathIcon,
   },
@@ -34,15 +34,13 @@ export default function AppFeatures() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
           <h2 className="text-base font-semibold leading-7 text-indigo-400">
-            Deploy faster
+            Generate Smarter
           </h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Everything you need to deploy your app
+            Everything you need to create content with AI
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-300">
-            Quis tellus eget adipiscing convallis sit sit eget aliquet quis.
-            Suspendisse eget egestas a elementum pulvinar et feugiat blandit at.
-            In mi viverra elit nunc.
+            Empower your workflow with a powerful neural writer console designed to generate, log, and manage your AI-crafted content effortlessly.
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
@@ -51,8 +49,8 @@ export default function AppFeatures() {
               <div key={feature.name} className="flex flex-col">
                 <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-white">
                   <feature.icon
-                    className="h-5 w-5 flex-none text-indigo-400"
-                    aria-hidden="true"
+                     className="h-5 w-5 flex-none text-indigo-400"
+                     aria-hidden="true"
                   />
                   {feature.name}
                 </dt>
