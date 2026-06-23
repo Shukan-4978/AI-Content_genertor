@@ -25,12 +25,11 @@ services:
         value: https://gen-ai-frontend.onrender.com # Change to frontend URL once deployed
 
   # Frontend Static Site
-  - type: web
+  - type: static
     name: gen-ai-frontend
-    env: static
     rootDir: MERN-AI-CONTENT-GENERATOR-FRONTEND-VITE
     buildCommand: npm install && npm run build
-    publishPath: dist
+    staticPublishPath: dist
     routes:
       - type: rewrite
         source: /*
