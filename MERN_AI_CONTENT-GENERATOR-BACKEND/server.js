@@ -6,7 +6,6 @@ require("dotenv").config();
 const usersRouter = require("./routes/usersRouter");
 const { errorHandler } = require("./middlewares/errorMiddleware");
 const openAIRouter = require("./routes/openAIRouter");
-const stripeRouter = require("./routes/stripeRouter");
 const razorpayRouter = require("./routes/razorpayRouter");
 const adminRouter = require("./routes/adminRouter");
 const User = require("./models/User");
@@ -93,7 +92,6 @@ app.get("/", (req, res) => {
 });
 app.use("/api/v1/users", usersRouter);
 app.use("/api/v1/openai", openAIRouter);
-app.use("/api/v1/stripe", stripeRouter);
 app.use("/api/v1/razorpay", razorpayRouter);
 app.use("/api/v1/admin", adminRouter);
 
