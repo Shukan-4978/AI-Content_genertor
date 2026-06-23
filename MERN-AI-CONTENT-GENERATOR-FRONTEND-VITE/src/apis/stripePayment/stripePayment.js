@@ -1,9 +1,12 @@
 import axios from "axios";
+
+const BASE_URL = import.meta.env.VITE_API_URL || "https://gen-ai-backend.onrender.com";
+
 //=======Stripe Payment=====
 
 export const handleFreeSubscriptionAPI = async () => {
   const response = await axios.post(
-    "http://localhost:8090/api/v1/stripe/free-plan",
+    `${BASE_URL}/api/v1/stripe/free-plan`,
     {},
     {
       withCredentials: true,
@@ -16,7 +19,7 @@ export const handleFreeSubscriptionAPI = async () => {
 export const createStripePaymentIntentAPI = async (payment) => {
   console.log(payment);
   const response = await axios.post(
-    "http://localhost:8090/api/v1/stripe/checkout",
+    `${BASE_URL}/api/v1/stripe/checkout`,
     {
       amount: Number(payment?.amount),
       subscriptionPlan: payment?.plan,
@@ -31,7 +34,7 @@ export const createStripePaymentIntentAPI = async (payment) => {
 
 export const verifyPaymentAPI = async (paymentId) => {
   const response = await axios.post(
-    `http://localhost:8090/api/v1/stripe/verify-payment/${paymentId}`,
+    `${BASE_URL}/api/v1/stripe/verify-payment/${paymentId}`,
     {},
     {
       withCredentials: true,

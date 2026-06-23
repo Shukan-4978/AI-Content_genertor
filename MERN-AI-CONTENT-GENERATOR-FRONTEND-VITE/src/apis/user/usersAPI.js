@@ -1,9 +1,12 @@
 import axios from "axios";
+
+const BASE_URL = import.meta.env.VITE_API_URL || "https://gen-ai-backend.onrender.com";
+
 //=======Registration=====
 
 export const registerAPI = async (userData) => {
   const response = await axios.post(
-    "http://localhost:8090/api/v1/users/register",
+    `${BASE_URL}/api/v1/users/register`,
     {
       email: userData?.email,
       password: userData?.password,
@@ -19,7 +22,7 @@ export const registerAPI = async (userData) => {
 
 export const loginAPI = async (userData) => {
   const response = await axios.post(
-    "http://localhost:8090/api/v1/users/login",
+    `${BASE_URL}/api/v1/users/login`,
     {
       email: userData?.email,
       password: userData?.password,
@@ -34,7 +37,7 @@ export const loginAPI = async (userData) => {
 
 export const checkUserAuthStatusAPI = async () => {
   const response = await axios.get(
-    "http://localhost:8090/api/v1/users/auth/check",
+    `${BASE_URL}/api/v1/users/auth/check`,
     {
       withCredentials: true,
     }
@@ -45,7 +48,7 @@ export const checkUserAuthStatusAPI = async () => {
 
 export const logoutAPI = async () => {
   const response = await axios.post(
-    "http://localhost:8090/api/v1/users/logout",
+    `${BASE_URL}/api/v1/users/logout`,
     {},
     {
       withCredentials: true,
@@ -57,7 +60,7 @@ export const logoutAPI = async () => {
 
 export const getUserProfileAPI = async () => {
   const response = await axios.get(
-    "http://localhost:8090/api/v1/users/profile",
+    `${BASE_URL}/api/v1/users/profile`,
 
     {
       withCredentials: true,
@@ -69,7 +72,7 @@ export const getUserProfileAPI = async () => {
 //=======Admin Panel APIs =====
 export const getAllUsersAPI = async () => {
   const response = await axios.get(
-    "http://localhost:8090/api/v1/admin/users",
+    `${BASE_URL}/api/v1/admin/users`,
     {
       withCredentials: true,
     }
@@ -79,7 +82,7 @@ export const getAllUsersAPI = async () => {
 
 export const toggleAdminAPI = async (userId) => {
   const response = await axios.post(
-    "http://localhost:8090/api/v1/admin/toggle-admin",
+    `${BASE_URL}/api/v1/admin/toggle-admin`,
     { userId },
     {
       withCredentials: true,
@@ -90,7 +93,7 @@ export const toggleAdminAPI = async (userId) => {
 
 export const deleteUserAPI = async (userId) => {
   const response = await axios.delete(
-    `http://localhost:8090/api/v1/admin/user/${userId}`,
+    `${BASE_URL}/api/v1/admin/user/${userId}`,
     {
       withCredentials: true,
     }

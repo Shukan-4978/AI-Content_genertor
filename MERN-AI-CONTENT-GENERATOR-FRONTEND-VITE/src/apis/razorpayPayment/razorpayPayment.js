@@ -1,9 +1,11 @@
 import axios from "axios";
 
+const BASE_URL = import.meta.env.VITE_API_URL || "https://gen-ai-backend.onrender.com";
+
 // Free Subscription
 export const handleFreeSubscriptionAPI = async () => {
   const response = await axios.post(
-    "http://localhost:8090/api/v1/razorpay/free-plan",
+    `${BASE_URL}/api/v1/razorpay/free-plan`,
     {},
     {
       withCredentials: true,
@@ -15,7 +17,7 @@ export const handleFreeSubscriptionAPI = async () => {
 // Create Razorpay Order
 export const createRazorpayOrderAPI = async (payment) => {
   const response = await axios.post(
-    "http://localhost:8090/api/v1/razorpay/checkout",
+    `${BASE_URL}/api/v1/razorpay/checkout`,
     {
       amount: Number(payment?.amount),
       subscriptionPlan: payment?.plan,
@@ -30,7 +32,7 @@ export const createRazorpayOrderAPI = async (payment) => {
 // Verify Razorpay Payment
 export const verifyRazorpayPaymentAPI = async (verificationData) => {
   const response = await axios.post(
-    "http://localhost:8090/api/v1/razorpay/verify",
+    `${BASE_URL}/api/v1/razorpay/verify`,
     verificationData,
     {
       withCredentials: true,
